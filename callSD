@@ -1,0 +1,15 @@
+# Import your stable diffusion implementation at the beginning of the file
+from stable_diffusion import StableDiffusion
+
+def run_stable_diffusion(self):
+    # Get parameter values from input fields
+    parameter1 = float(self.input_parameter1.text())
+    parameter2 = float(self.input_parameter2.text())
+
+    # Create an instance of your StableDiffusion class or algorithm
+    diffusion = StableDiffusion(parameter1, parameter2)
+
+    # Run the algorithm and update progress and status
+    for progress, status in diffusion.run():
+        self.progress_bar.setValue(progress)  # Update the progress bar
+        self.status_bar.showMessage(status)    # Update the status bar
